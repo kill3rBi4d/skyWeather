@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="skyWeather by yasVan - open weather application. View weathers of different locations. Simple user experience and interface.">
+    <link rel="canonical" href="https://farkkitabevi.com">
+    <link rel="shortcut icon" href="/src/favicon.svg">
+    <link href="/src/favicon.svg" rel="apple-touch-icon" sizes="180x180">
+    <link href="/src/favicon.svg" rel="icon" type="image/png" sizes="32x32" />
+    <link href="/src/favicon.svg" rel="icon" type="image/png" sizes="16x16" />
+    <link href="/src/favicon.svg" rel="apple-touch-icon" sizes="60x60" />
+    <link href="/src/favicon.svg" rel="apple-touch-icon" sizes="120x120" />
+    <link rel="mask-icon" href="/src/favicon.svg" color="#2c76cc">
+    <title>skyWeather - Open Weather Application</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="layer"></div>
+    <section class="header">
+        <img src="./src/logo.svg" alt="" srcset="">
+    </section>
+    <section class="err">
+        <div class="wrapper">
+            <img src="./src/err.svg" alt="" srcset="">
+            <span class="msg"></span>
+            <button class="close-btn">Okay</button>
+        </div>
+    </section>
+    <section class="wrapper">
+        <section class="search">
+            <input type="text" name="" placeholder="Enter City" class="search-input" id="search-input">
+            <button class="search-btn" id="search-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"></path><path d="M11.412,8.586C11.791,8.966,12,9.468,12,10h2c0-1.065-0.416-2.069-1.174-2.828c-1.514-1.512-4.139-1.512-5.652,0 l1.412,1.416C9.346,7.83,10.656,7.832,11.412,8.586z"></path></svg>
+            </button>
+        </section>
+        <div class="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(241, 242, 243, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <circle cx="84" cy="50" r="10" fill="#008fd4">
+                    <animate attributeName="r" repeatCount="indefinite" dur="0.9259259259259258s" calcMode="spline" keyTimes="0;1" values="10;0" keySplines="0 0.5 0.5 1" begin="0s"></animate>
+                    <animate attributeName="fill" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="discrete" keyTimes="0;0.25;0.5;0.75;1" values="#008fd4;#4690b1;#008fd4;#4690b1;#008fd4" begin="0s"></animate>
+                </circle><circle cx="16" cy="50" r="10" fill="#008fd4">
+                  <animate attributeName="r" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                  <animate attributeName="cx" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                </circle><circle cx="50" cy="50" r="10" fill="#4690b1">
+                  <animate attributeName="r" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.9259259259259258s"></animate>
+                  <animate attributeName="cx" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.9259259259259258s"></animate>
+                </circle><circle cx="84" cy="50" r="10" fill="#008fd4">
+                  <animate attributeName="r" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8518518518518516s"></animate>
+                  <animate attributeName="cx" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8518518518518516s"></animate>
+                </circle><circle cx="16" cy="50" r="10" fill="#4690b1">
+                  <animate attributeName="r" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-2.7777777777777777s"></animate>
+                  <animate attributeName="cx" repeatCount="indefinite" dur="3.7037037037037033s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-2.7777777777777777s"></animate>
+                </circle>
+            </svg>
+        </div>
+        <section class="weather">
+            <h2 class="city"></h2>
+            <h1 class="temp"></h1>
+            <div class="des-icon">
+                <img src="" alt="" srcset="" class="icon">
+                <div class="description"></div>
+            </div>
+            <div class="humidity"></div>
+            <div class="wind"></div>
+        </section>
+    </section>
+    <section class="footer">
+        <span class="footer-text">
+            © 2022 <b>skyWeather</b>, All Rights Reserved.
+        </span>
+        <span class="sponse">Powered by <a href="https://openweathermap.org/">OpenWeather</a></span>
+    </section>
+</body>
+</html>
